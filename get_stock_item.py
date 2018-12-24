@@ -47,6 +47,7 @@ for row in all_rows:
     print(row[0].value, row[1].value)
     stockCode = str(row[0].value)
     stockName = row[1].value
+    print('stockCode : ' + stockCode)
     if stockCode == 'Code':
         continue
 
@@ -59,8 +60,7 @@ for row in all_rows:
     sheet.cell(output_row, column=2).value = stockName    
 
 
-    for page in range(1, 3):
-        print('stockCode' + stockCode)
+    for page in range(1, 5):
         url = 'https://finance.naver.com/item/frgn.nhn?code=' + stockCode + '&page=' + str(page)
         print('url : ', url)
         html = urlopen(url)
